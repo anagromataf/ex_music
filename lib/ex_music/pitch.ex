@@ -8,18 +8,23 @@ defmodule ExMusic.Pitch do
           | :a
           | :b
 
-  @type alter() :: number()
+  @type alter() ::
+          :double_flat
+          | :flat
+          | :sharp
+          | :double_sharp
+
   @type octave() :: non_neg_integer()
 
   @type t() :: %__MODULE__{
           step: step(),
-          alter: alter(),
+          alter: alter() | nil,
           octave: octave() | nil
         }
 
   @enforce_keys [:step]
 
   defstruct step: nil,
-            alter: 0,
+            alter: nil,
             octave: nil
 end
