@@ -1,0 +1,2 @@
+defmodule ExMusic do
+end
